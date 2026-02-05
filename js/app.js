@@ -124,11 +124,11 @@
       '<div class="response-card__meta">' +
         '<span class="response-card__author">' + escapeHtml(response.name || 'Anonymous') + '</span>' +
         '<div class="vote-controls">' +
-          '<button class="vote-btn vote-btn--up' + (userVote === 'up' ? ' is-active' : '') + '" data-id="' + response.id + '" data-dir="up" aria-label="Upvote">' +
+          '<button type="button" class="vote-btn vote-btn--up' + (userVote === 'up' ? ' is-active' : '') + '" data-id="' + response.id + '" data-dir="up" aria-label="Upvote">' +
             '&#9650;' +
           '</button>' +
           '<span class="vote-count">' + netVotes + '</span>' +
-          '<button class="vote-btn vote-btn--down' + (userVote === 'down' ? ' is-active' : '') + '" data-id="' + response.id + '" data-dir="down" aria-label="Downvote">' +
+          '<button type="button" class="vote-btn vote-btn--down' + (userVote === 'down' ? ' is-active' : '') + '" data-id="' + response.id + '" data-dir="down" aria-label="Downvote">' +
             '&#9660;' +
           '</button>' +
         '</div>' +
@@ -222,16 +222,18 @@
     saveResponses(responses);
     saveUserVotes(userVotes);
 
-    // Update the card in place
-    var card = document.querySelector('.response-card[data-id="' + responseId + '"]');
-    if (card) {
-      var netVotes = (response.upvotes || 0) - (response.downvotes || 0);
+    // Update all matching cards on the page
+    var cards = document.querySelectorAll('.response-card[data-id="' + responseId + '"]');
+    var netVotes = (response.upvotes || 0) - (response.downvotes || 0);
+    var newVote = userVotes[responseId] || null;
+
+    for (var j = 0; j < cards.length; j++) {
+      var card = cards[j];
       var countEl = card.querySelector('.vote-count');
       if (countEl) countEl.textContent = netVotes;
 
       var upBtn = card.querySelector('.vote-btn--up');
       var downBtn = card.querySelector('.vote-btn--down');
-      var newVote = userVotes[responseId] || null;
 
       if (upBtn) {
         upBtn.classList.toggle('is-active', newVote === 'up');
@@ -279,7 +281,7 @@
     // If on homepage, refresh recent responses
     var recentContainer = document.getElementById('recent-responses');
     if (recentContainer) {
-      var recent = getResponses().slice(0, 6);
+      var recent = sortResponses(getResponses(), 'newest').slice(0, 6);
       renderResponses('recent-responses', recent);
     }
 

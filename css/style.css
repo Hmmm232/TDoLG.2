@@ -21,7 +21,7 @@
   --fs-xl: 1.75rem;
   --fs-2xl: 2.25rem;
   --fs-3xl: 3rem;
-  --fs-hero: clamp(2.5rem, 5vw, 4.5rem);
+  --fs-hero: clamp(2.2rem, 4vw, 3.5rem);
 
   --lh-tight: 1.2;
   --lh-base: 1.6;
@@ -33,26 +33,26 @@
   --fw-bold: 700;
 
   /* --- Colours --- */
-  --clr-bg: #0a0a0f;
-  --clr-bg-alt: #111118;
-  --clr-bg-card: #16161f;
-  --clr-bg-card-hover: #1c1c28;
-  --clr-surface: #1e1e2a;
-  --clr-border: #2a2a3a;
-  --clr-border-light: #3a3a4f;
+  --clr-bg: #faf9f6;
+  --clr-bg-alt: #f0eee9;
+  --clr-bg-card: #ffffff;
+  --clr-bg-card-hover: #f7f6f3;
+  --clr-surface: #ffffff;
+  --clr-border: #ddd9d1;
+  --clr-border-light: #c8c3b8;
 
-  --clr-text: #e8e6e1;
-  --clr-text-muted: #9a97a0;
-  --clr-text-faint: #6a6775;
+  --clr-text: #2c2c2c;
+  --clr-text-muted: #6b6561;
+  --clr-text-faint: #9a948d;
 
-  --clr-accent: #c4a87c;
-  --clr-accent-light: #dbc4a0;
-  --clr-accent-dim: #8a7655;
+  --clr-accent: #8b5e3c;
+  --clr-accent-light: #6b4226;
+  --clr-accent-dim: #a8845f;
 
-  --clr-upvote: #6ecf8e;
-  --clr-downvote: #cf6e6e;
-  --clr-upvote-bg: rgba(110, 207, 142, 0.1);
-  --clr-downvote-bg: rgba(207, 110, 110, 0.1);
+  --clr-upvote: #3a8f5c;
+  --clr-downvote: #b84c4c;
+  --clr-upvote-bg: rgba(58, 143, 92, 0.08);
+  --clr-downvote-bg: rgba(184, 76, 76, 0.08);
 
   /* --- Spacing --- */
   --space-xs: 0.25rem;
@@ -79,9 +79,9 @@
   --transition-slow: 400ms ease;
 
   /* --- Shadows --- */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -164,7 +164,7 @@ p + p {
 }
 
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .section--alt {
@@ -182,7 +182,7 @@ p + p {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(10, 10, 15, 0.85);
+  background: rgba(250, 249, 246, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--clr-border);
@@ -380,8 +380,8 @@ p + p {
    ============================================ */
 
 .hero {
-  padding-top: calc(4rem + var(--space-3xl));
-  padding-bottom: var(--space-2xl);
+  padding-top: calc(4rem + var(--space-xl));
+  padding-bottom: var(--space-lg);
   text-align: center;
 }
 
@@ -399,12 +399,12 @@ p + p {
   font-size: var(--fs-lg);
   color: var(--clr-text-muted);
   max-width: var(--max-width-text);
-  margin: 0 auto var(--space-2xl);
+  margin: 0 auto var(--space-lg);
 }
 
 /* The prompt text - poetic, flowing */
 .prompt-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0;
 }
 
 .prompt-text {
@@ -427,7 +427,7 @@ p + p {
 
 .prompt-cta {
   text-align: center;
-  margin-top: var(--space-2xl);
+  margin-top: var(--space-lg);
 }
 
 .prompt-cta p {
@@ -674,8 +674,8 @@ p + p {
    ============================================ */
 
 .text-page {
-  padding-top: calc(4rem + var(--space-3xl));
-  padding-bottom: var(--space-3xl);
+  padding-top: calc(4rem + var(--space-xl));
+  padding-bottom: var(--space-2xl);
 }
 
 .text-page__title {
@@ -773,8 +773,8 @@ p + p {
    ============================================ */
 
 .page-header {
-  padding-top: calc(4rem + var(--space-2xl));
-  padding-bottom: var(--space-xl);
+  padding-top: calc(4rem + var(--space-lg));
+  padding-bottom: var(--space-md);
   text-align: center;
 }
 
@@ -899,7 +899,7 @@ p + p {
    ============================================ */
 
 .thank-you {
-  padding-top: calc(4rem + var(--space-3xl));
+  padding-top: calc(4rem + var(--space-xl));
   min-height: 60vh;
   display: flex;
   flex-direction: column;
