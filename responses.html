@@ -47,11 +47,11 @@
     <section class="section">
       <div class="container">
         <div class="responses-toolbar">
-          <select class="sort-select" id="sort-responses">
-            <option value="newest">Newest First</option>
-            <option value="oldest">Oldest First</option>
-            <option value="top">Most Upvoted</option>
-          </select>
+          <div class="sort-buttons" id="sort-responses">
+            <button type="button" class="sort-btn is-active" data-sort="newest">Newest</button>
+            <button type="button" class="sort-btn" data-sort="oldest">Oldest</button>
+            <button type="button" class="sort-btn" data-sort="top">Most Upvoted</button>
+          </div>
           <a href="add-response.html" class="btn">Add Your Response</a>
         </div>
 

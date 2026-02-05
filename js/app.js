@@ -288,8 +288,8 @@
     // If on responses page, refresh
     var allContainer = document.getElementById('all-responses');
     if (allContainer) {
-      var sortSelect = document.getElementById('sort-responses');
-      var method = sortSelect ? sortSelect.value : 'newest';
+      var activeSort = document.querySelector('.sort-btn.is-active');
+      var method = activeSort ? activeSort.getAttribute('data-sort') : 'newest';
       renderResponses('all-responses', sortResponses(getResponses(), method));
     }
   }
@@ -387,10 +387,18 @@
       var allResponses = getResponses();
       renderResponses('all-responses', sortResponses(allResponses, 'newest'));
 
-      var sortSelect = document.getElementById('sort-responses');
-      if (sortSelect) {
-        sortSelect.addEventListener('change', function () {
-          var method = sortSelect.value;
+      var sortContainer = document.getElementById('sort-responses');
+      if (sortContainer) {
+        sortContainer.addEventListener('click', function (e) {
+          var btn = e.target.closest('.sort-btn');
+          if (!btn) return;
+          var method = btn.getAttribute('data-sort');
+          // Update active state
+          var allBtns = sortContainer.querySelectorAll('.sort-btn');
+          for (var k = 0; k < allBtns.length; k++) {
+            allBtns[k].classList.remove('is-active');
+          }
+          btn.classList.add('is-active');
           renderResponses('all-responses', sortResponses(getResponses(), method));
         });
       }
