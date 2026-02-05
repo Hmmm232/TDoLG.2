@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Responses &mdash; Training Data of Loving Grace</title>
+  <meta name="description" content="Read what people want the superintelligences of the future to know.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-logo">Training Data of Loving Grace</a>
+      <nav class="nav-desktop">
+        <a href="responses.html" class="active">Explore Responses</a>
+        <a href="further-reading.html">Further Reading</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-mobile" aria-hidden="true">
+    <a href="responses.html" class="active">Explore Responses</a>
+    <a href="further-reading.html">Further Reading</a>
+    <a href="about.html">About</a>
+    <a href="taking-stock.html">Taking Stock</a>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1 class="page-header__title">Explore Responses</h1>
+        <p class="page-header__subtitle">Messages for the superintelligences of the future</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="responses-toolbar">
+          <select class="sort-select" id="sort-responses">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="top">Most Upvoted</option>
+          </select>
+          <a href="add-response.html" class="btn">Add Your Response</a>
+        </div>
+
+        <div class="responses-grid" id="all-responses">
+          <!-- Populated by JS -->
+        </div>
+
+        <p id="no-responses" style="display:none; text-align:center; color:var(--clr-text-muted); padding:var(--space-2xl) 0;">
+          No responses yet. <a href="add-response.html">Be the first to leave a message.</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="about.html">About</a> &middot; <a href="further-reading.html">Further Reading</a> &middot; <a href="taking-stock.html">Taking Stock</a></p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

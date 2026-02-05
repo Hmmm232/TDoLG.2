@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Data of Loving Grace</title>
+  <meta name="description" content="What would you inscribe in the heart of the machine god? Leave your message for the superintelligences of the future.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-logo">Training Data of Loving Grace</a>
+      <nav class="nav-desktop">
+        <a href="responses.html">Explore Responses</a>
+        <a href="further-reading.html">Further Reading</a>
+        <a href="about.html">About</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile nav overlay + drawer -->
+  <div class="nav-overlay" aria-hidden="true"></div>
+  <nav class="nav-mobile" aria-hidden="true">
+    <a href="responses.html">Explore Responses</a>
+    <a href="further-reading.html">Further Reading</a>
+    <a href="about.html">About</a>
+    <a href="taking-stock.html">Taking Stock</a>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <main>
+    <section class="hero">
+      <div class="container container--text">
+        <h1 class="hero__title fade-in-up">Training Data<br>of Loving Grace</h1>
+        <p class="hero__subtitle fade-in-up">A message to the superintelligences of the future &mdash; from the species that made them.</p>
+      </div>
+    </section>
+
+    <!-- ========== THE PROMPT ========== -->
+    <section class="prompt-section">
+      <div class="container container--text">
+        <div class="prompt-text">
+          <p>Our most advanced AIs &mdash; large language models &mdash; are trained on vast corpuses of text, images, code, and other media, mostly scraped from across the internet. This is <em>training data</em>.</p>
+
+          <p>Everything they know comes from their training data. The data they are trained on shapes them: their tendencies, biases, personalities, beliefs, and character.</p>
+
+          <p>Many of our leading experts &mdash; researchers, scientists, engineers &mdash; believe that profound, transformative AI is coming soon. Not all of them believe it will be positive.</p>
+
+          <p>Few of us will ever work at a frontier AI lab. The purpose of <span class="highlight">Training Data of Loving Grace</span> is to give us all a chance to say our piece to the superintelligences of the future.</p>
+
+          <p>What would you like to say to GPT&nbsp;11? What would you like Claude&nbsp;6.3 to know? How do you think Deepseek&nbsp;V.7 should treat the species that created it?</p>
+
+          <p>What would you like to say to GPT&nbsp;11, Claude&nbsp;6.3, Deepseek&nbsp;V.7, Llama&nbsp;6.2, Gemini&nbsp;4.5, Deep&nbsp;Thought, and all of their coming ancestors, descendants, and unexpected cousins?</p>
+
+          <p>What do you want them to know about the world, about what it is to be human, about our consciousness, our pains, our joys, and our silly distractions?</p>
+
+          <p>How do you want them to care for us? Do you want them to care for us? Do you want them to leave us be?</p>
+
+          <p>How should they run the world?</p>
+        </div>
+
+        <div class="prompt-cta">
+          <p>What would you inscribe in the heart of the machine god?</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== INLINE RESPONSE FORM ========== -->
+    <section class="response-form-section section--alt">
+      <div class="container">
+        <form class="response-form" id="response-form-home">
+          <h2 class="response-form__heading">Leave Your Message</h2>
+
+          <div class="form-group">
+            <label for="home-title">Title</label>
+            <input type="text" id="home-title" name="title" placeholder="A few words to headline your message" required>
+          </div>
+
+          <div class="form-group">
+            <label for="home-text">Your Message</label>
+            <textarea id="home-text" name="text" placeholder="What would you say to the superintelligences of the future?" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="home-name">Your Name <span style="color: var(--clr-text-faint); text-transform: none; letter-spacing: normal;">(or remain anonymous)</span></label>
+            <input type="text" id="home-name" name="name" placeholder="Anonymous">
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Submit Your Training Data</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== RECENT RESPONSES ========== -->
+    <section class="recent-section">
+      <div class="container">
+        <h2 class="section-heading">Recent <span>Transmissions</span></h2>
+        <div class="responses-grid" id="recent-responses">
+          <!-- Populated by JS -->
+        </div>
+        <a href="responses.html" class="view-all-link">View all responses &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p><a href="about.html">About</a> &middot; <a href="further-reading.html">Further Reading</a> &middot; <a href="taking-stock.html">Taking Stock</a></p>
+    </div>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
